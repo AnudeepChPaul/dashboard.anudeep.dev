@@ -1,0 +1,193 @@
+//@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;800&family=Roboto+Mono:wght@100;300;400;500;700&display=swap");
+@font-face {
+  font-family: "dashfont";
+  src: url("/fonts/dashfont.eot?g7cj0j");
+  src: url("/fonts/dashfont.eot?g7cj0j#iefix") format("embedded-opentype"),
+    url("/fonts/dashfont.ttf?g7cj0j") format("truetype"),
+    url("/fonts/dashfont.woff?g7cj0j") format("woff"),
+    url("/fonts/dashfont.svg?g7cj0j#dashfont") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="dash-icon-"],
+[class*=" dash-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "dashfont" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dash-icon-all-settings:before {
+  content: "\f085";
+}
+.dash-icon-stop:before {
+  content: "\f28d";
+}
+.dash-icon-heartbeat:before {
+  content: "\f21e";
+}
+.dash-icon-settings:before {
+  content: "\e915";
+}
+.dash-icon-active-notifications:before {
+  content: "\e906";
+}
+.dash-icon-no-notification:before {
+  content: "\e911";
+}
+.dash-icon-pie-chart:before {
+  content: "\e912";
+}
+.dash-icon-checklist-done:before {
+  content: "\e909";
+}
+.dash-icon-check_box:before {
+  content: "\e913";
+}
+.dash-icon-check_box_outline_blank:before {
+  content: "\e914";
+}
+.dash-icon-loop:before {
+  content: "\e900";
+}
+.dash-icon-done-all:before {
+  content: "\e90c";
+}
+.dash-icon-done:before {
+  content: "\e910";
+}
+.dash-icon-clear:before {
+  content: "\e90d";
+}
+.dash-icon-cloud_off:before {
+  content: "\e90e";
+}
+.dash-icon-cloud_upload:before {
+  content: "\e90f";
+}
+.dash-icon-undo:before {
+  content: "\e901";
+}
+.dash-icon-checklist-add:before {
+  content: "\e907";
+}
+.dash-icon-checklist-start:before {
+  content: "\e908";
+}
+.dash-icon-circle:before {
+  content: "\e904";
+}
+.dash-icon-create:before {
+  content: "\e902";
+}
+.dash-icon-tasks:before {
+  content: "\e903";
+}
+.dash-icon-delete:before {
+  content: "\e905";
+}
+.dash-icon-comment:before {
+  content: "\e90a";
+}
+.dash-icon-play:before {
+  content: "\e90b";
+}
+.dash-icon-prev:before {
+  content: "\e916";
+}
+.dash-icon-next:before {
+  content: "\e917";
+}
+
+/* Make clicks pass-through */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #29d;
+
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #29d, 0 0 10px #29d;
+  opacity: 1;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+/* Remove these to get rid of the spinner */
+#nprogress .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  bottom: 15px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  width: 3rem;
+  height: 3rem;
+  box-sizing: border-box;
+
+  border: solid 2px transparent;
+  border-top-color: #29d;
+  border-left-color: #29d;
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 250ms linear infinite;
+  animation: nprogress-spinner 250ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes nprogress-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

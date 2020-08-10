@@ -1,0 +1,9 @@
+{
+    "name": "resume.anudeepchpaul.in",
+    "short_name": "resume.anudeepchpaul.in",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "A portal to check on Anudeep Chandra Paul's resume and skills.",
+    "icons": []
+  }
