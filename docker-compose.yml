@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  ui:
+    build:
+      context: '.'
+      dockerfile: Dockerfile
+    container_name: dashboard_ui
+    ports:
+      - "3000:3000"

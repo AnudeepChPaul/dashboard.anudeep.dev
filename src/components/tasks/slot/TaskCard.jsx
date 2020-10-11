@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import React from "react";
-import SquaredButton from "../../common/inputs/buttons/SquaredButton";
+import SquaredButton from "../../../shared/components/inputs/buttons/SquaredButton";
 import { MUTABLE_STATES } from "@/helpers/Workflow";
 
 const Task = styled(motion.li)`

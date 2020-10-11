@@ -4,13 +4,13 @@ import dynamic from "next/dynamic";
 import {
   updateApplicationConfig,
   getApplicationConfig,
-} from "@/api/Configurations.api";
-import Button from "@/components/common/inputs/buttons/Button";
-import InputFieldAutoSubmit from "@/components/common/inputs/fields/InputFieldAutoSubmit";
+} from "@/shared/api/Configurations.api";
+import Button from "@/shared/components/inputs/buttons/Button";
+import InputFieldAutoSubmit from "@/shared/components/inputs/fields/InputFieldAutoSubmit";
 import SkillsDisplay from "./SkillDisplay";
 import SettingsBlockWrapper from "../common/SettingsBlockWrapper";
-import { getSkills, updateSkillsConfig, deleteSkills } from "@/api/Skills.api";
-import Form from "@/components/common/inputs/fields/Form";
+import { getSkills, updateSkillsConfig, deleteSkills } from "@/shared/api/Skills.api";
+import Form from "@/shared/components/inputs/fields/Form";
 import { fireLoad } from "@/helpers/Loader";
 
 const AddEditSkills = dynamic(() => import("./AddEditSkills"));

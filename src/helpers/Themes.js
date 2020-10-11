@@ -53,6 +53,26 @@ const light = {
   },
   boxShadow,
 };
+
+const vintage = {
+  colors: {
+    primary: "turquoise",
+    primaryShade: "mintcream",
+    secondary: "#666666",
+    contrast: "#1b2430",
+    info: "#0288D1",
+    error: "#D32F2F",
+    warning: "#FBC02D",
+    success: "#00BFA5",
+    transparent: "transparent",
+    dark: "#000",
+  },
+  font: {
+    rootFont: 16,
+    fontFamily,
+  },
+  boxShadow,
+};
 const dark = {
   colors: {
     primary: "#999999",
@@ -91,6 +111,7 @@ export const getSwirlAnimation = () => ({
 export const getTapAnimation = () => ({ scale: 0.9, rotate: 0 });
 export const getZoomAnimation = () => ({ scale: 1.25, rotate: 0 });
 export const getLightZoomAnimation = () => ({ scale: 1.07, rotate: 0 });
+export const getThinZoomAnimation = () => ({ scale: 1.025, rotate: 0 });
 export const getLightTapAnimation = () => ({ scale: 1, rotate: 0 });
 export const getSlideInFromTop = () => ({
   animate: { opacity: 1, y: 0 },

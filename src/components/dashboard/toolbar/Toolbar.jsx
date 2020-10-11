@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import DashHeader from "@/components/dashboard/toolbar/Header";
-import Button from "@/components/common/inputs/buttons/Button";
-import SquaredButton from "@/components/common/inputs/buttons/SquaredButton";
+import Button from "@/shared/components/inputs/buttons/Button";
+import SquaredButton from "@/shared/components/inputs/buttons/SquaredButton";
 
 const ToolbarWrapper = styled.div`
   display: flex;

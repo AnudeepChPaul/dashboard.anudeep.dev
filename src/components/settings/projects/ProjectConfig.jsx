@@ -3,16 +3,14 @@ import { fireLoad } from "@/helpers/Loader";
 import SettingsBlockWrapper from "../common/SettingsBlockWrapper";
 import Form from "@/shared/components/inputs/fields/Form";
 import Button from "@/shared/components/inputs/buttons/Button";
-import {
-  getCompanies,
-  addOrUpdateCompany,
-  deleteCompany,
-} from "@/shared/api/Company.api";
-import dynamic from "next/dynamic";
+import { addOrUpdateCompany, deleteCompany } from "@/shared/api/Company.api";
+import { connect } from "react-redux";
+import { fetchAllProjects } from "@/redux/Projects.redux";
+import ProjectDetails from "./ProjectDetails";
 
-const ExperienceDetails = dynamic(() => import("./ExperienceDetails"));
+// const ExperienceDetails = dynamic(() => import("./ExperienceDetails"));
 
-class ExperienceConfig extends React.Component {
+class ProjectConfig extends React.Component {
   constructor(props) {
     super(props);
 
@@ -28,14 +26,7 @@ class ExperienceConfig extends React.Component {
 
   componentDidMount() {
     fireLoad();
-    Promise.all([
-      getCompanies().then((response) => {
-        return this.setState({
-          companies: [...response.companies],
-        });
-      }),
-    ]).finally(() => {
-      fireLoad(true);
+    Promise.all([this.props.fetchAllProjects()]).finally(() => {
       this.setState({
         dataLoaded: true,
       });
@@ -66,10 +57,11 @@ class ExperienceConfig extends React.Component {
   }
 
   render() {
+    debugger;
     return (
       <SettingsBlockWrapper
         dataLoaded={this.state.dataLoaded}
-        title={"Experience"}
+        title={"Projects"}
       >
         <Button
           color="primary"
@@ -78,11 +70,11 @@ class ExperienceConfig extends React.Component {
           margin={"1rem auto"}
           onClick={() => this.setState({ addingSkills: true })}
         >
-          Add More Experience
+          Add More Project(s)
         </Button>
         <Form>
           {this.state.addingSkills && (
-            <ExperienceDetails
+            <ProjectDetails
               onSubmit={this.onSubmit}
               onCancel={() => {
                 this.setState({
@@ -92,7 +84,7 @@ class ExperienceConfig extends React.Component {
             />
           )}
         </Form>
-        {this.state.companies.map((comp, index) => (
+        {/* {this.state.companies.map((comp, index) => (
           <ExperienceDetails
             readOnly={true}
             key={comp.companyId}
@@ -100,10 +92,14 @@ class ExperienceConfig extends React.Component {
             onDelete={this.onDelete}
             experience={{ ...comp }}
           />
-        ))}
+        ))} */}
       </SettingsBlockWrapper>
     );
   }
 }
 
-export default ExperienceConfig;
+const mapDispatchToProps = (dispatch) => ({
+  fetchAllProjects: () => dispatch(fetchAllProjects()),
+});
+
+export default connect(null, mapDispatchToProps)(ProjectConfig);

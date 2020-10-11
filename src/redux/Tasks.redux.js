@@ -4,7 +4,7 @@ import {
   getExistingTasks,
   putUpdatedTask,
   deleteExistingTasks,
-} from "@/api/Tasks.api";
+} from "@/shared/api/Tasks.api";
 import { uniqueId } from "@/helpers/Helper";
 import { start, done } from "nprogress";
 

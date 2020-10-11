@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { newTask, getAllTasks, deleteTask } from "@/redux/Tasks.redux";
 import { connect } from "react-redux";
 import dynamic from "next/dynamic";
-import SquaredButton from "@/components/common/inputs/buttons/SquaredButton";
-import Window from "@/components/common/window/Window";
+import SquaredButton from "@/shared/components/inputs/buttons/SquaredButton";
+import Window from "@/commons/window/Window";
 
 const TaskToolbarWrapper = styled.div`
   flex: 1 100%;

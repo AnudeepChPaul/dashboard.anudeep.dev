@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import SquaredButton from "@/components/common/inputs/buttons/SquaredButton";
+import SquaredButton from "@/shared/components/inputs/buttons/SquaredButton";
 import { motion } from "framer-motion";
 
 const SkillsDisplayWrapper = styled(motion.div)`

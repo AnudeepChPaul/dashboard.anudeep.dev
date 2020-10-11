@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { withFormik } from "formik";
-import Button from "@/components/common/inputs/buttons/Button";
-import InputField from "@/components/common/inputs/fields/InputField";
-import PlainTextButton from "@/components/common/inputs/buttons/PlainTextButton";
+import Button from "@/shared/components/inputs/buttons/Button";
+import InputField from "@/shared/components/inputs/fields/InputField";
+import PlainTextButton from "@/shared/components/inputs/buttons/PlainTextButton";
 
 const AddEditSkillsWrapper = styled.div`
   display: flex;

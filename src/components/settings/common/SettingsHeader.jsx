@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "@/components/common/inputs/buttons/Button";
-import PlainTextButton from "@/components/common/inputs/buttons/PlainTextButton";
+import Button from "@/shared/components/inputs/buttons/Button";
+import PlainTextButton from "@/shared/components/inputs/buttons/PlainTextButton";
 
 const SettingsHeaderWrapper = styled.h5`
   height: 2.5rem;

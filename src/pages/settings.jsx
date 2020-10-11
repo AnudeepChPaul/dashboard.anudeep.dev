@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import dynamic from "next/dynamic";
-import MenuLayout from "@/components/common/layout/MenuLayout";
+import MenuLayout from "@/commons/layout/MenuLayout";
 // import IntroConfig from "@/components/settings/intro/IntroConfig";
 // import SkillsConfig from "@/components/settings/skills/SkillsConfig";
 
@@ -16,6 +16,9 @@ const ConfigOrder = dynamic(() =>
 );
 const ExperienceConfig = dynamic(() =>
   import("@/components/settings/experience/ExperienceConfig")
+);
+const ProjectConfig = dynamic(() =>
+  import("@/components/settings/projects/ProjectConfig")
 );
 
 const SettingsWrapper = styled.div`
@@ -44,10 +47,11 @@ export default function Settings() {
           <IntroConfig />
           <SkillsConfig />
           <ExperienceConfig />
+          <ProjectConfig />
         </ConfigWraps>
-        <ConfigWraps>
+        {/* <ConfigWraps>
           <ConfigOrder />
-        </ConfigWraps>
+        </ConfigWraps> */}
       </SettingsWrapper>
     </MenuLayout>
   );

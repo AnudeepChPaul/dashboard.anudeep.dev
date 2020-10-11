@@ -1,4 +1,4 @@
-import Api, { parseData } from "@/api";
+import Api, { parseData } from "@/shared/api/index";
 
 export const getCompanies = () => {
   return Api()

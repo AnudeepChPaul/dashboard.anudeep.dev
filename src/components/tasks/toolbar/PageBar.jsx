@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import SquaredButton from "@/components/common/inputs/buttons/SquaredButton";
-import Banner from "@/components/common/banner/Banner";
+import SquaredButton from "@/shared/components/inputs/buttons/SquaredButton";
+import Banner from "@/shared/components/banner/Banner";
 
 const PageBarWrapper = styled.div`
   flex: 1;

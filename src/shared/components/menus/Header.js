@@ -2,8 +2,8 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import React from "react";
-import SquaredButton from "@/components/common/inputs/buttons/SquaredButton";
-import InputField from "@/components/common/inputs/fields/InputField";
+import SquaredButton from "@/shared/components/inputs/buttons/SquaredButton";
+import InputField from "@/shared/components/inputs/fields/InputField";
 
 const Header = styled(motion.header)`
   height: 2rem;

@@ -42,18 +42,18 @@ const Spacer = styled.label`
   flex: 1;
 `;
 
-const Form = dynamic(() => import("@/components/common/inputs/fields/Form"));
+const Form = dynamic(() => import("@/shared/components/inputs/fields/Form"));
 const InputField = dynamic(() =>
-  import("@/components/common/inputs/fields/InputField")
+  import("@/shared/components/inputs/fields/InputField")
 );
 const TextArea = dynamic(() =>
-  import("@/components/common/inputs/fields/TextArea")
+  import("@/shared/components/inputs/fields/TextArea")
 );
 const Fieldset = dynamic(() =>
-  import("@/components/common/inputs/fields/FieldSet")
+  import("@/shared/components/inputs/fields/FieldSet")
 );
 const SquaredButton = dynamic(() =>
-  import("@/components/common/inputs/buttons/SquaredButton")
+  import("@/shared/components/inputs/buttons/SquaredButton")
 );
 
 const TaskDetails = function (props) {

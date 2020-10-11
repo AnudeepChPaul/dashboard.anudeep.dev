@@ -1,11 +1,11 @@
 import React from "react";
 import { withFormik } from "formik";
-import Form from "@/components/common/inputs/fields/Form";
-import InputFieldAutoSubmit from "@/components/common/inputs/fields/InputFieldAutoSubmit";
+import Form from "@/shared/components/inputs/fields/Form";
+import InputFieldAutoSubmit from "@/shared/components/inputs/fields/InputFieldAutoSubmit";
 import {
   updateApplicationConfig,
   getApplicationConfig,
-} from "@/api/Configurations.api";
+} from "@/shared/api/Configurations.api";
 import SettingsBlockWrapper from "../common/SettingsBlockWrapper";
 
 class IntroConfig extends React.Component {

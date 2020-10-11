@@ -4,6 +4,7 @@ import { withFormik } from "formik";
 import Button from "@/shared/components/inputs/buttons/Button";
 import InputField from "@/shared/components/inputs/fields/InputField";
 import PlainTextButton from "@/shared/components/inputs/buttons/PlainTextButton";
+import { getThinZoomAnimation } from "@/helpers/Themes";
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,7 +21,7 @@ const FormWrapper = styled(Wrapper)`
   padding: 0;
   margin: 0;
 `;
-const SideWrap = styled(Wrapper)`
+const SideWrap = styled(FormWrapper)`
   width: 6.5rem;
   align-content: flex-end;
   flex-direction: column;
@@ -40,7 +41,7 @@ const ActionBar = styled(Wrapper)`
   margin: 0 2rem;
 `;
 
-class ExperienceDetails extends React.Component {
+class ProjectDetails extends React.Component {
   constructor(props) {
     super(props);
 
@@ -55,16 +56,13 @@ class ExperienceDetails extends React.Component {
   }
 
   onSubmit() {
+    debugger;
     this.props.onSubmit(this.props.values);
     if (this.props.readOnly && !this.state.readOnly) {
       this.setState({
         readOnly: true,
       });
     }
-
-    // Object.keys(this.props.values).forEach(
-    //   (key) => (this.props.values[key] = "")
-    // );
   }
 
   onEdit() {
@@ -89,12 +87,10 @@ class ExperienceDetails extends React.Component {
     }
     const { setFieldValue } = this.props;
 
-    setFieldValue("companyId", this.props.experience.companyId || "");
-    setFieldValue("companyName", this.props.experience.companyName || "");
-    setFieldValue("duration", this.props.experience.duration || "");
-    setFieldValue("designation", this.props.experience.designation || "");
-    setFieldValue("technologies", this.props.experience.technologies || "");
-    setFieldValue("projects", this.props.experience.projects || "");
+    // setFieldValue("projectId", this.props.experience.projectId || "");
+    // setFieldValue("projectName", this.props.experience.projectName || "");
+    // setFieldValue("description", this.props.experience.description || "");
+    // setFieldValue("myRole", this.props.experience.myRole || "");
   }
 
   render() {
@@ -105,43 +101,33 @@ class ExperienceDetails extends React.Component {
     const inputFieldMaps = {
       height: "3rem",
       width: "95%",
-      whileHover: readOnly ? null : { scale: 1.1 },
+      whileHover: readOnly ? null : getThinZoomAnimation(),
     };
 
     return (
       <Wrapper>
-        {/* <SideWrap /> */}
         <FormWrapper>
           <InputField
             {...inputFieldMaps}
-            placeholder={"Company Name"}
-            name="companyName"
-            value={values.companyName}
-            onChange={handleChange}
-            disabled={readOnly}
-            focus={true}
-          />
-          <InputField
-            {...inputFieldMaps}
-            placeholder={"Duration"}
-            name="duration"
-            value={values.duration}
+            placeholder={"Project Name"}
+            name="projectName"
+            value={values.projectName}
             onChange={handleChange}
             disabled={readOnly}
           />
           <InputField
             {...inputFieldMaps}
-            placeholder={"Designation"}
-            name="designation"
-            value={values.designation}
+            placeholder={"Description"}
+            name="description"
+            value={values.description}
             onChange={handleChange}
             disabled={readOnly}
           />
           <InputField
             {...inputFieldMaps}
-            placeholder={"Technologies"}
-            name="technologies"
-            value={values.technologies}
+            placeholder={"My Role"}
+            name="myRole"
+            value={values.myRole}
             onChange={handleChange}
             disabled={readOnly}
           />
@@ -188,10 +174,9 @@ class ExperienceDetails extends React.Component {
 export default withFormik({
   enableReinitialize: true,
   mapPropsToValues: () => ({
-    companyName: "",
-    duration: "",
-    designation: "",
-    technologies: "",
-    projects: "",
+    projectId: "",
+    projectName: "",
+    description: "",
+    myRole: "",
   }),
-})(ExperienceDetails);
+})(ProjectDetails);

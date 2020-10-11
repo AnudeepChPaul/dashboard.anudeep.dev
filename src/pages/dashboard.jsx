@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import DashTool from "@/components/dashboard/toolbar/Toolbar";
 import dynamic from "next/dynamic";
-import MenuLayout from "@/components/common/layout/MenuLayout";
+import MenuLayout from "@/commons/layout/MenuLayout";
 
 const Dash = styled.div`
   display: flex;

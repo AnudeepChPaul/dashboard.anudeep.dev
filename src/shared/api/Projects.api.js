@@ -1,9 +1,9 @@
-import Api, { parseData } from "@/api";
+import Api, { parseData } from "@/shared/api/index";
 
-export const getExistingTasks = (page = 0, pageSize = 20) => {
+export const getAllProjects = (page = 0, pageSize = 100) => {
   return Api()
     .request({
-      url: `/task_service/all`,
+      url: `/project_service/get_projects`,
       method: `get`,
       params: {
         page,
@@ -14,11 +14,11 @@ export const getExistingTasks = (page = 0, pageSize = 20) => {
 };
 
 export const postNewTask = (task) => {
-  return Api().post("/task_service/new", task).then(parseData);
+  return Api().post("/project_service/new", task).then(parseData);
 };
 
 export const putUpdatedTask = (task) => {
-  return Api().put("/task_service/update", task).then(parseData);
+  return Api().put("/project_service/update", task).then(parseData);
 };
 
 export const deleteExistingTasks = (idList) => {

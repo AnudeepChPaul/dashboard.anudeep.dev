@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import TaskToolbar from "@/components/tasks/toolbar/TaskToolbar";
-import MenuLayout from "@/components/common/layout/MenuLayout";
+import MenuLayout from "@/commons/layout/MenuLayout";
 import dynamic from "next/dynamic";
 
 const TaskWrapper = styled.div`

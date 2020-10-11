@@ -1,12 +1,5 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
-import {
-  getBrandAnimation,
-  getLightTapAnimation,
-  getLightZoomAnimation,
-  getSlideInFromTop,
-  getTapAnimation,
-} from "@/helpers/Themes";
+import {motion} from "framer-motion";
 import React from "react";
 import Router from "next/router";
 import Button from "../inputs/buttons/Button";
@@ -68,7 +61,7 @@ const Menu = styled.div`
   }
 `;
 
-const slideIn = getSlideInFromTop();
+;
 
 function AppMenu(props) {
   const onClickMenuItems = (el) => {
@@ -78,8 +71,8 @@ function AppMenu(props) {
   return (
     <Menu>
       <Header>
-        <HeaderInner animate={slideIn.animate} style={slideIn.style}>
-          <BrandLogo animate={getBrandAnimation()}>
+        <HeaderInner animate={props.slideIn.animate} style={props.slideIn.style}>
+          <BrandLogo animate={props.brandAnimation}>
             <span>{props.header || "ACP"}</span>
           </BrandLogo>
         </HeaderInner>
@@ -107,10 +100,10 @@ function AppMenu(props) {
           },
         ].map((el, index) => (
           <Button
-            animate={{ opacity: 1, y: 0 }}
-            style={{ opacity: 0, y: "-100%" }}
-            whileHover={getLightZoomAnimation()}
-            whileTap={getTapAnimation()}
+            animate={{opacity: 1, y: 0}}
+            style={{opacity: 0, y: "-100%"}}
+            whileHover={props.buttonHoverAnimation}
+            whileTap={props.buttonTapAnimation}
             key={index}
             onClick={() => onClickMenuItems(el)}
             icon={el.icon}

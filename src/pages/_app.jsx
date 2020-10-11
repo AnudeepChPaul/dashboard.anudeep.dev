@@ -9,8 +9,19 @@ import "./app.scss";
 import { fireLoad, initializeLoadingEventSubscribers } from "@/helpers/Loader";
 import App from "next/app";
 import dynamic from "next/dynamic";
-import { validateToken } from "@/api/Auth.api";
-import { setAuthenticationHeaders } from "@/api";
+import { validateToken } from "@/shared/api/Auth.api";
+import { setAuthenticationHeaders } from "@/shared/api";
+
+const fonts = [
+  "Open Sans",
+  "Montserrat",
+  "sans-serif",
+  "-apple-system",
+  "BlinkMacSystemFont",
+  "Segoe UI",
+  "Roboto",
+  "Arial",
+];
 
 const Main = styled.main`
   font-size: 16px;
@@ -22,9 +33,8 @@ const Main = styled.main`
   overflow: hidden;
 
   * {
-    font-family: Montserrat, sans-serif, -apple-system, BlinkMacSystemFont,
-      "Segoe UI", Roboto, Arial;
-    font-weight: 300;
+    font-family: ${fonts.join(",")};
+    font-weight: 400;
     border-radius: 3px;
     -webkit-font-smoothing: antialiased;
   }
@@ -33,7 +43,7 @@ const Main = styled.main`
 `https://www.manh.com/sites/default/files/favicon.ico
 https://www.smartapp.com/favicon.ico`;
 
-const LoginPage = dynamic(() => import("@/components/auth/login"));
+const AuthenticationPage = dynamic(() => import("@/shared/components/auth/Authentication"));
 
 const userAuth = process.env.NEXT_PUBLIC_NO_LOGIN === "true";
 
@@ -92,7 +102,7 @@ class MyApp extends App {
     return (
       <ThemeProvider theme={theme}>
         {!this.state.userAuthenticated ? (
-          <LoginPage onAuthSuccess={(evt) => this.onAuthSuccess(evt)} />
+          <AuthenticationPage onAuthSuccess={(evt) => this.onAuthSuccess(evt)} />
         ) : (
           <Main>
             <Component {...pageProps} />

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { connect } from "react-redux";
 import { nextState } from "@/helpers/Workflow";
 import { updateTask, selectTask, selectAllTasks } from "@/redux/Tasks.redux";
-import SquaredButton from "../../common/inputs/buttons/SquaredButton";
+import SquaredButton from "../../../shared/components/inputs/buttons/SquaredButton";
 import dynamic from "next/dynamic";
 
 const TaskSlotWrapper = styled.div`
