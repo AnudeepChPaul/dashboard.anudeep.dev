@@ -11,7 +11,6 @@
     "export": "next export"
   },
   "dependencies": {
-    "@loadable/component": "^5.13.1",
     "@next/bundle-analyzer": "^9.4.4",
     "@zeit/next-source-maps": "^0.0.3",
     "axios": "^0.19.2",

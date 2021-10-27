@@ -1,11 +1,13 @@
 import axios from "axios";
 
 export default (withoutResume) => {
+  const baseUrl =
+    process.env.NEXT_PUBLIC_BASE_URL ||
+    `${process.env.API_HOST}:${process.env.API_PORT}` ||
+    `http://127.0.0.1:5000`;
+
   return axios.create({
-    baseURL: `http://127.0.0.1:5000/${!withoutResume ? "resume/" : ""}api`,
-    // process.env.NODE_ENV === "development"
-    //   ? "http://127.0.0.1:5000/resume/api"
-    //   : "https://api-anudeepchpaul-in.herokuapp.com/resume/api",
+    baseURL: `${baseUrl}/${!withoutResume ? "resume/" : ""}api`,
   });
 };
 
